@@ -12,6 +12,9 @@ module.exports = {
       colors: {
         svelte: '#ff3e00',
       },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
