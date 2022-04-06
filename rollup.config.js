@@ -117,11 +117,11 @@ function createWiki() {
 			var toch2 = marked.parse(content).match(/<h2.*?>(.*?)<\/h2>/g);
 			toch2 = toch2 ? toch2.map(x => x.replace(/<h2.*?>/, '').replace(/<\/h2>/, '')) : [];
 			var toc = toch1.concat(toch2);
-			const url = `/data/wiki/${name}.md`;
+			const url = `data/wiki/${name}.md`;
 			wiki.push({ title, url, toc });
 		}
 	}
-	const home = wiki.find(x => x.url === '/data/wiki/index.md');
+	const home = wiki.find(x => x.url === 'data/wiki/index.md');
 	wiki.splice(wiki.indexOf(home), 1);
 	wiki.unshift(home);
 
