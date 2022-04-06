@@ -7,7 +7,8 @@
 	import Wiki from "./routes/Wiki.svelte";
 	import NavBar from "./components/NavBar.svelte";
 	import Footer from "./components/Footer.svelte";
-
+	const isGithubPages = true; // put it in true when you are deploying to a github pages URL
+	const webpageGithub = "venom-page";
 	export let url: string;
 </script>
 
@@ -20,14 +21,24 @@
 			<Router {url}>
 				<NavBar />
 				<div class="mt-6">
-					<Route path="/" component={Home} />
-					<Route path="/downloads" component={Download} />
-					<Route path="/wiki" component={Wiki} />
+					<Route
+						path="{isGithubPages ? '/' + webpageGithub : ''}/"
+						component={Home}
+					/>
+					<Route
+						path="{isGithubPages
+							? '/' + webpageGithub
+							: ''}/downloads"
+						component={Download}
+					/>
+					<Route
+						path="{isGithubPages ? '/' + webpageGithub : ''}/wiki"
+						component={Wiki}
+					/>
 				</div>
 			</Router>
 		</div>
 
 		<Footer />
 	</div>
-
 </main>
