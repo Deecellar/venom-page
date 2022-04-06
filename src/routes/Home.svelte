@@ -6,14 +6,14 @@
     import Feed from "../components/Feed.svelte";
     import type FeedItemClass from "../components/FeedItemClass";
     async function getFeed(): Promise<FeedItemClass[]> {
-        const response = await fetch("data/announcements.djson");
+        const response = await fetch("data/announcements.json");
         const items: FeedItemClass[] = await response.json();
 
         return items;
     }
 
     async function getFeatures(): Promise<FeatureClass[]> {
-        const response = await fetch("data/features.djson");
+        const response = await fetch("data/features.json");
         const items: FeatureClass[] = await response.json();
         return items;
     }

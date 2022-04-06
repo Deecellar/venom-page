@@ -125,6 +125,6 @@ function createWiki() {
 	wiki.splice(wiki.indexOf(home), 1);
 	wiki.unshift(home);
 
-	fs.writeFileSync(path.join(__dirname, 'public/data/wiki.djson'), JSON.stringify(wiki));
+	fs.writeFileSync(path.join(__dirname, 'public/data/wiki.json'), JSON.stringify(wiki));
 
 }

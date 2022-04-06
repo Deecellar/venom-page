@@ -25,7 +25,7 @@
     ];
     let currentItem: SidebarItem<string> = items[0];
     async function getWikiInfo() {
-        const response = await fetch("data/wiki.djson");
+        const response = await fetch("data/wiki.json");
         const text: WikiInfo[] = await response.json();
         // We transform wikiInfo into sidebar items
         items = text.map((wikiInfo: WikiInfo) => {
@@ -41,7 +41,6 @@
                     };
                 }),
                 new ExtraInfo<string>(async () => {
-                    location.hash = `#${wikiInfo.title.toLowerCase()}`;
                     return getMDFile(wikiInfo.url);
                 })
             );
@@ -56,9 +55,14 @@
             index = location.hash.length;
         }
         var fileName = location.hash.substring(1, index);
-        currentItem = items.find(
-            (item) => item.title.toLowerCase().replace(/ /g, "-") == fileName
-        );
+        if (fileName.length > 0) {
+            currentItem = items.find(
+                (item) =>
+                    item.title.toLowerCase().replace(/ /g, "-") == fileName
+            );
+        } else {
+            currentItem = items[0];
+        }
     }
 </script>
 

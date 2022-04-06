@@ -3,7 +3,7 @@
     import { DownloadItemType } from "../components/DownloadItem";
 
     async function getDownloads() {
-        const response = await fetch("data/downloads.djson");
+        const response = await fetch("data/downloads.json");
         const json: DownloadItem[] = await response.json();
         return json;
     }
