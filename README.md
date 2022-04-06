@@ -1,66 +1,56 @@
-> Default dev port is now `8080`
-# Svelte + TS + Tailwind 3.0 app
+## Welcome Venom Linux
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/colinbate/svelte-ts-tailwind-template and is based on the official Svelte template with TypeScript pre-enabled and Tailwind CSS configured. Uses Tailwind CSS 3.0, which now uses
-the JIT compiler by default.
+Venom Linux is a lightweight source-based linux distribution targetting experienced users.
 
-> Note that this isn't a SvelteKit app, this is a vanilla Svelte template with the above mentioned technologies pre-installed.
+**Current release: 3.0**
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+[![screenshot-20210312.png](https://i.postimg.cc/hPW7rSwq/screenshot-20210312.png)](https://postimg.cc/z37BD18d)
 
-```bash
-npx degit colinbate/svelte-ts-tailwind-template svelte-app
-cd svelte-app
+**[Ports Search](https://github.com/venomlinux/ports/blob/3.0/scripts/ports.csv)**
+
+## Announcement
+```
+[12nd November 2021]
+- Venom Linux 3.0 iso is released.
+- 3.0-RC1 user can migrate it by manually changing version in `/etc/scratchpkg.repo`, `/etc/os-release`, and `/etc/venom-release`.
+
+[19th October 2021]
+- Release Candidate ISO for v3.0 is released.
+- Some ports might broken or won't build.
+- Please open issue for any bugs.
+- Any fixes and improvement are very welcomed, just open PR for your changes.
 ```
 
-Alternatively, if you are currently on GitHub, you can click the "Use this template" button at the top of this page.
+## Download
+### 3.0
+- [https://osdn.net/dl/venomlinux/venomlinux-3.0-x86_64.iso](https://osdn.net/dl/venomlinux/venomlinux-3.0-x86_64.iso)
+- [https://sourceforge.net/projects/venomlinux/files/3.0/venomlinux-3.0-x86_64.iso](https://sourceforge.net/projects/venomlinux/files/3.0/venomlinux-3.0-x86_64.iso)
+- [https://github.com/venomlinux/ports/releases/download/v3.0-RC1/venomlinux-rootfs-3.0-RC1-x86_64.tar.xz](https://github.com/venomlinux/ports/releases/download/v3.0-RC1/venomlinux-rootfs-3.0-RC1-x86_64.tar.xz)
 
-*Note that you will need to have [Node.js](https://nodejs.org) >=12.13 installed.*
+## Goal
+- Minimal as possible
+- Highly customizable
+- No systemd (elogind or any part from it)
+- No huge software like Gnome
+- Community participating
 
-## Get started
+## Links
+Telegram group: [https://t.me/venomlinux](https://t.me/venomlinux)
 
-Install the dependencies...
+Forum: [https://www.reddit.com/r/venomlinux](https://www.reddit.com/r/venomlinux)
 
-```bash
-cd svelte-app
-npm install
-```
+Bugs/Issues: [https://github.com/venomlinux/ports/issues](https://github.com/venomlinux/ports/issues)
 
-...then start [Rollup](https://rollupjs.org):
+Wiki: [https://github.com/venomlinux/ports/wiki](https://github.com/venomlinux/ports/wiki)
 
-```bash
-npm run dev
-```
+## Contact
+email: <a href = "mailto: emmett1.2miligrams@protonmail.com">emmett1.2miligrams@protonmail.com</a>
 
-> **Default port change!** To avoid a conflict with Apple systems on port 5000.
+github: [https://github.com/emmett1](https://github.com/emmett1)
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+## Donate
+Venom Linux is non profitable project for linux community, if you like this project and want to support me you can make donation so I can keep this project going.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+buymeacoffee: [https://www.buymeacoffee.com/venomlinux](https://www.buymeacoffee.com/venomlinux)
 
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-TypeScript has already been enabled in this template.
-
+paypal: [https://paypal.me/syazwanemmett](https://paypal.me/syazwanemmett)

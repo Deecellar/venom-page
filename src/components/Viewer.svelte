@@ -1,17 +1,46 @@
 <script lang="ts">
-    import {marked} from "marked";
-    import DOMPurify from "dompurify";
-    const Prism : any = Window["Prism"];
-    import {
+  import { marked } from "marked";
+  import DOMPurify from "dompurify";
+  import { elementScrollIntoViewPolyfill } from "seamless-scroll-polyfill";
+
+  elementScrollIntoViewPolyfill();
+
+  const Prism: any = Window["Prism"];
+  import {
     tick,
     onDestroy,
     onMount,
     createEventDispatcher,
     afterUpdate,
-  } from 'svelte'
-  export let value: string = '# Hello World\n```css\n.hello{\ntop:10px;\n}\n```';
+  } from "svelte";
+  export let value: string =
+    "# Hello World\n```css\n.hello{\ntop:10px;\n}\n```";
 
-  let markdownBody: HTMLElement;
+  export let location: Location;
+  let isMounted: boolean = false;
+  onMount(() => {
+    isMounted = true;
+  });
+  let prev = location.hash;
+
+  $: {
+    if (isMounted) {
+      if (location.hash != prev) {
+        const element = document.getElementById(
+          location.hash.substring(location.hash.indexOf(".") + 1)
+        );
+
+        if (element !== null) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+        }
+      }
+      prev = location.hash;
+    }
+  }
   // We are not generic, so we can have a bit of liberty setting up markdown like github does.
   marked.setOptions({
     gfm: true,
@@ -23,27 +52,14 @@
     sanitizer: DOMPurify.sanitize,
   });
 
-  var htmlOut = marked.parse(value);
-  console.log(htmlOut);
+  $: htmlOut = marked.parse(value);
 
-  $: html = `${htmlOut}<!--${0}-->`
+  $: html = `${htmlOut}<!--${0}-->`;
 </script>
-<svelte:head>
-    <link href="https://unpkg.com/prismjs@1.27.0/themes/prism.min.css" rel="stylesheet"/>
-	<link href="https://unpkg.com/prismjs@1.27.0/themes/prism-twilight.min.css" rel="stylesheet"/>
-	<link href="https://unpkg.com/prismjs@1.27.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet"/>
-	<link href="https://unpkg.com/prismjs@1.27.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet"/>
-	<link href="https://unpkg.com/prismjs@1.27.0/plugins/command-line/prism-command-line.min.css" rel="stylesheet"/>
-    
-    <script src="https://unpkg.com/prismjs@1.27.0/components/prism-core.min.js" ></script>
-	<script src="https://unpkg.com/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" ></script>
-	<script src="https://unpkg.com/prismjs@1.27.0/plugins/highlight-keywords/prism-highlight-keywords.min.js" ></script>
-	<script src="https://unpkg.com/prismjs@1.27.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
-	<script src="https://unpkg.com/prismjs@1.27.0/plugins/toolbar/prism-toolbar.min.js" ></script>
-	<script src="https://unpkg.com/prismjs@1.27.0/plugins/command-line/prism-command-line.min.js" ></script>
-</svelte:head>
-<div bind:this={markdownBody} class="markdown-body">
+
+<div
+  id="viewer"
+  class="markdown-body line-numbers prose dark:prose-invert prose-img:rounded-md prose-img:shadow-md prose-img:inline scroll-smooth motion-safe:scroll-auto "
+>
   {@html html}
 </div>
-
-

@@ -8,6 +8,7 @@
     async function getFeed(): Promise<FeedItemClass[]> {
         const response = await fetch("data/announcements.djson");
         const items: FeedItemClass[] = await response.json();
+
         return items;
     }
 
@@ -19,7 +20,11 @@
 
     // This kinda works, smarter scraping would bypass this maybe, but this is a dumb way to do it
     // And it works for most scrapers
-    function smallBrainAntiScrapEmail(name: string, host:string, tld: string): string {
+    function smallBrainAntiScrapEmail(
+        name: string,
+        host: string,
+        tld: string
+    ): string {
         return `${name}@${host}.${tld}`;
     }
 </script>
@@ -56,7 +61,7 @@
                             <span
                                 class="block   text-blue-200 f   hover:text-blue-400 transition-colors "
                                 >advanced Linux Users</span
-                            >   
+                            >
                         </h1>
                         <p
                             class="mt-6 max-w-lg  mx-auto text-center font-inter text-xl text-blue-200 sm:max-w-3xl"
@@ -135,7 +140,6 @@
 </section>
 
 <section id="goals">
-
     {#await getFeatures()}
         <Feature />
     {:then val}
@@ -178,73 +182,145 @@
 </section>
 
 <section id="contanct-and-downloads">
-<div class="bg-white dark:bg-gray-800">
-    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
-        <div>
-          <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl">Contact</h2>
-          <div class="mt-3">
-            <p class="text-lg dark:text-gray-200 text-gray-500">If you ever need to contact for something contact emmet, but if the webpage is failing or doesn't look good somewhere, contact us at:</p>
-          </div>
-          <div class="mt-9">
-            <div class="flex">
-                <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/mail -->
-                    <svg class="h-6 w-6 text-gray-400 dark:text-gray-50" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div class="ml-3 text-base dark:text-gray-200 text-gray-500">
-                    <p>Emmet (Venom Linux Main Contributor and creator)</p>
-                    <a href="mailto:{smallBrainAntiScrapEmail("emmett1.2miligrams","protonmail","com")}">{smallBrainAntiScrapEmail("emmett1.2miligrams","protonmail","com")}</a>
-                    <br/>
-                    <a href="https://github.com/emmett1/">Github</a>
-                  </div>
-                  
-            </div>
-            <div class="mt-6 flex">
-                <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/mail -->
-                    <svg class="h-6 w-6 text-gray-400 dark:text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div class="ml-3 text-base dark:text-gray-50 text-gray-500">
-                    <p>Web Programmer: Deecellar (Rimuspp)</p>
-                    <a href="mailto:{smallBrainAntiScrapEmail("19101das","gmail","com")}">{smallBrainAntiScrapEmail("19101das","gmail","com")}</a>
-                    <br/>
-                    <a href="https://github.com/Deecellar/">Github</a>
-                  </div>
-                  
+    <div class="bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div
+                class="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8"
+            >
+                <div>
+                    <h2
+                        class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl"
+                    >
+                        Contact
+                    </h2>
+                    <div class="mt-3">
+                        <p class="text-lg dark:text-gray-200 text-gray-500">
+                            If you ever need to contact for something contact
+                            emmet, but if the webpage is failing or doesn't look
+                            good somewhere, contact us at:
+                        </p>
+                    </div>
+                    <div class="mt-9">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <!-- Heroicon name: outline/mail -->
+                                <svg
+                                    class="h-6 w-6 text-gray-400 dark:text-gray-50"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    />
+                                </svg>
+                            </div>
+                            <div
+                                class="ml-3 text-base dark:text-gray-200 text-gray-500"
+                            >
+                                <p>
+                                    Emmet (Venom Linux Main Contributor and
+                                    creator)
+                                </p>
+                                <a
+                                    href="mailto:{smallBrainAntiScrapEmail(
+                                        'emmett1.2miligrams',
+                                        'protonmail',
+                                        'com'
+                                    )}"
+                                    >{smallBrainAntiScrapEmail(
+                                        "emmett1.2miligrams",
+                                        "protonmail",
+                                        "com"
+                                    )}</a
+                                >
+                                <br />
+                                <a href="https://github.com/emmett1/">Github</a>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex">
+                            <div class="flex-shrink-0">
+                                <!-- Heroicon name: outline/mail -->
+                                <svg
+                                    class="h-6 w-6 text-gray-400 dark:text-gray-200"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    />
+                                </svg>
+                            </div>
+                            <div
+                                class="ml-3 text-base dark:text-gray-50 text-gray-500"
+                            >
+                                <p>Web Programmer: Deecellar (Rimuspp)</p>
+                                <a
+                                    href="mailto:{smallBrainAntiScrapEmail(
+                                        '19101das',
+                                        'gmail',
+                                        'com'
+                                    )}"
+                                    >{smallBrainAntiScrapEmail(
+                                        "19101das",
+                                        "gmail",
+                                        "com"
+                                    )}</a
+                                >
+                                <br />
+                                <a href="https://github.com/Deecellar/"
+                                    >Github</a
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
-          </div>
-        </div>
-        <div class="mt-12 sm:mt-16 md:mt-0">
-          <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl">Donations</h2>
-          <div class="mt-3">
-            <p class="dark:text-gray-200  text-gray-500">Venom Linux is non profit project for linux community, if you like this project and want to support emmet you can make a donation so the projects continues</p>
-          </div>
-          <div class="mt-9">
-            <div class="flex">
-              <div class="flex-shrink-0">
-
-              </div>
-              <div class="ml-3 text-base text-blue-500">
-                <a href="https://www.buymeacoffee.com/venomlinux" class="mt-1">Buy me a Coffee</a>
-              </div>
+                <div class="mt-12 sm:mt-16 md:mt-0">
+                    <h2
+                        class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl"
+                    >
+                        Donations
+                    </h2>
+                    <div class="mt-3">
+                        <p class="dark:text-gray-200  text-gray-500">
+                            Venom Linux is non profit project for linux
+                            community, if you like this project and want to
+                            support emmet you can make a donation so the
+                            projects continues
+                        </p>
+                    </div>
+                    <div class="mt-9">
+                        <div class="flex">
+                            <div class="flex-shrink-0" />
+                            <div class="ml-3 text-base text-blue-500">
+                                <a
+                                    href="https://www.buymeacoffee.com/venomlinux"
+                                    class="mt-1">Buy me a Coffee</a
+                                >
+                            </div>
+                        </div>
+                        <div class="mt-6 flex">
+                            <div class="flex-shrink-0" />
+                            <div class="ml-3 text-base text-blue-500">
+                                <a href="https://paypal.me/syazwanemmett"
+                                    >Paypal</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mt-6 flex">
-              <div class="flex-shrink-0">
-
-              </div>
-              <div class="ml-3 text-base text-blue-500">
-                <a href="https://paypal.me/syazwanemmett">Paypal</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  
 </section>
