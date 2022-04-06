@@ -13,7 +13,7 @@
     location = location;
 
     let active_link =
-        "border-indigo-500 dark:text-white text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
+        "border-blue-500 dark:text-white text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
     let non_active_link =
         "border-transparent dark:text-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium";
     let active_link_mobile =
@@ -46,14 +46,7 @@
                     >
                         Wiki
                     </Link>
-                    <Link
-                        to="contact"
-                        class={location === "/contact"
-                            ? active_link
-                            : non_active_link}
-                    >
-                        Contact
-                    </Link>
+
                 </div>
             </div>
         </div>
@@ -80,14 +73,7 @@
                 >
                     Wiki
                 </Link>
-                <Link
-                    to="contact"
-                    class={location === "/contact"
-                        ? active_link_mobile
-                        : non_active_link_mobile}
-                >
-                    Contact
-                </Link>
+
             </div>
         </div>
     </div>

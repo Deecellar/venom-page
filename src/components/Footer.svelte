@@ -1,11 +1,11 @@
-<footer class="bg-white dark:bg-gray-800">
+<footer class=" bg-white dark:bg-gray-800 top-full " >
     <div
         class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
     >
         <div class="flex justify-center space-x-6 md:order-2">
             <a
                 href="https://t.me/venomlinux"
-                class="text-gray-400 hover:text-gray-500"
+                class="text-blue-400 hover:text-gray-500"
             >
                 <span class="sr-only">Facebook</span>
                 <svg
@@ -22,7 +22,7 @@
 
             <a
                 href="https://www.reddit.com/r/venomlinux"
-                class="text-gray-400 hover:text-gray-500"
+                class="text-orange-400 hover:text-gray-500"
             >
                 <span class="sr-only">Reddit</span>
                 <svg
@@ -39,7 +39,7 @@
 
             <a
                 href="https://github.com/venomlinux/ports/issues"
-                class="text-gray-400 hover:text-gray-500"
+                class="text-black dark:text-white dark:hover:text-black hover:text-white"
             >
                 <span class="sr-only">GitHub</span>
                 <svg

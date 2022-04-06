@@ -10,32 +10,29 @@
 
 <div class="py-12 bg-white dark:bg-gray-800">
     <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 class="sr-only">Venom features</h2>
+        <h3
+            class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl text-left mb-6  "
+        >
+            Goals
+        </h3>
         <dl class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
             {#each goals as goal}
-                <div>
+                <div class="relative">
                     <dt>
-                        <div
-                            class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white"
+                        <!-- Heroicon name: outline/check -->
+                        <svg
+                            class="absolute h-6 w-6 text-green-500"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
                         >
-                            <!-- Heroicon name: outline/globe-alt -->
-                            <svg
-                                class="h-6 w-6"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M5 13l4 4L19 7"
-                                />
-                            </svg>
-                        </div>
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+
+                        </svg>
                         <p
-                            class="mt-5 text-lg leading-6 font-medium text-gray-900 dark:text-gray-50"
+                            class="ml-9 text-lg leading-6 font-medium text-gray-900 dark:text-white "
                         >
                             {#if goal.title.length == 0}
                                 <div
@@ -50,6 +47,7 @@
                             {/if}
                         </p>
                     </dt>
+
                     <dd class="mt-2 text-base text-gray-500 dark:text-gray-200">
                         {#if goal.goal.length == 0}
                             <div
