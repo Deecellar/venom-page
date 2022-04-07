@@ -6,7 +6,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-
+  pull_request:
+    branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -38,6 +39,8 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v2.6.0
         with:
             build_dir: public/
+            dry_run: ${{ github.event_name == 'pull_request' }}
+            domain: venom.lonepawd.net
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
