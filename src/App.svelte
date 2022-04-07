@@ -10,7 +10,7 @@
 	const isGithubPages = false; // put it in true when you are deploying to a github pages URL
 	const webpageGithub = "venom-page";
 	export let url: string;
-	let basepath = isGithubPages ? `/${webpageGithub}` : "";
+	let basepath = isGithubPages ? `/${webpageGithub}/` : "";
 </script>
 
 <svelte:head />
