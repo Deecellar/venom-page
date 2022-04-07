@@ -111,7 +111,7 @@ Change the partition type of the 100 ~ 200 MB partition to EFI System.
 ##### For both UEFI as well as BIOS**
 
 Create a SWAP partition; to create a SWAP partition in cfdisk you need to alter the partition type
-![Select Partition Type SWAP](https://github.com/TenOfEleven/venomlinux-installation-guide/blob/master/14%20-%20Select%20Partition%20Type%20for%20swap.png?raw=true)
+![Select Partition Type SWAP](https://raw.githubusercontent.com/TenOfEleven/venomlinux-installation-guide/master/14%20-%20Select%20Partition%20Type%20for%20swap.png)
 
 ![GPT Partitions Overview](https://raw.githubusercontent.com/TenOfEleven/venomlinux-installation-guide/master//VirtualBox_Test%20Machine_13_06_2020_20_05_06.png)
 
