@@ -59,13 +59,13 @@
                         : non_active_link_mobile}>Home</Link
                 >
                 <Link
-                    to="/downloads"
+                    to="downloads"
                     class={location === "/downloads"
                         ? active_link_mobile
                         : non_active_link_mobile}>Downloads</Link
                 >
                 <Link
-                    to="/wiki"
+                    to="wiki"
                     class={location === "/wiki"
                         ? active_link_mobile
                         : non_active_link_mobile}
