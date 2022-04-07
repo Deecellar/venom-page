@@ -40,7 +40,6 @@ jobs:
         with:
             build_dir: public/
             dry_run: ${{ github.event_name == 'pull_request' }}
-            domain: venom.lonepawd.net
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
